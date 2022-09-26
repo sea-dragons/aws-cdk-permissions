@@ -1,14 +1,12 @@
-# Welcome to your CDK TypeScript project
+# AWS CDK Permissions
 
-This is a blank project for CDK development with TypeScript.
+This repository allows you to use AWS CDK to automate the creation of a role that GitHub Actions can assume to automatically deploy further AWS infrastructure. This requires that AWS CDK is already installed and a profile is set-up to be used. The role name defaults to `aws-cdk-access-role` which then can be added to the GitHub Actions workflows.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+Edit the AWS/GitHub paramters in `deploy.sh` to be the ones relevant to your project.
 
-## Useful commands
+The following commands can be run to deploy/destroy the role:
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `cdk deploy`      deploy this stack to your default AWS account/region
-* `cdk diff`        compare deployed stack with current state
-* `cdk synth`       emits the synthesized CloudFormation template
+```
+source ./deploy.sh 'deploy'
+source ./deploy.sh 'destroy'
+```
