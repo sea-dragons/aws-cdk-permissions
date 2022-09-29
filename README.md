@@ -1,12 +1,14 @@
 # AWS CDK Permissions
 
-This repository allows you to use AWS CDK to automate the creation of a role that GitHub Actions can assume to automatically deploy further AWS infrastructure. This requires that AWS CDK is already installed and a profile is set-up to be used. The role name defaults to `aws-cdk-access-role` which then can be added to the GitHub Actions workflows.
+This repository allows you to use AWS CDK to automate the creation of a role that GitHub Actions can assume to automatically deploy further AWS infrastructure. This requires that docker is running and that an AWS profile is setup with the required config/credentials files created.
 
-Edit the AWS/GitHub paramters in `deploy.sh` to be the ones relevant to your project.
+The variables in the `Makefile` need to be updated to create the role in the correct account and with the correct permissions. The role name defaults to `aws-cdk-access-role` which then can be added to the GitHub Actions workflows. This, alongside other variables can be found in the `lib/account-details.json` file. The default tags to apply to the role cam be found in the `lib/default-tags.json` file.
 
 The following commands can be run to deploy/destroy the role:
 
 ```
-source ./deploy.sh 'deploy'
-source ./deploy.sh 'destroy'
+make deploy
+make destroy
 ```
+
+Other commands found in the `Makefile` are `make synth`, as well as `make deployManual` and `make destroyManual` to include the manual check before the deploy/destroy happens.

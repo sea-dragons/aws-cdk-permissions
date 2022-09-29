@@ -1,0 +1,6 @@
+{
+  "GitHubOrg": "<organisation>",
+  "GitHubRepo": "<repository>",
+  "GitHubBranch": "<branch>",
+  "RoleName": "aws-cdk-access-role"
+}

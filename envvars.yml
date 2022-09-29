@@ -1,0 +1,9 @@
+envvars:
+  - name: CDK_DEFAULT_ACCOUNT
+    desc: The AWS account number to deploy the stack into
+
+  - name: AWS_REGION
+    desc: The AWS region to deploy the stack into
+
+  - name: PROFILE
+    desc: The AWS profile with credentials to use to deploy the stack

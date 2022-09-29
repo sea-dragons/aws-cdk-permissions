@@ -1,0 +1,20 @@
+# docker-compose.yml
+version: '3.8'
+services:
+
+  envvars:
+    image: flemay/envvars:0.0.8
+    env_file: .env
+    working_dir: /work
+    volumes:
+      - .:/work
+
+  awscdk:
+    build: .
+    environment:
+      - AWS_SDK_LOAD_CONFIG=1
+    entrypoint: ""
+    working_dir: /work
+    volumes:
+      - .:/work
+      - ~/.aws:/root/.aws
