@@ -30,7 +30,6 @@ deployManual: variables
 		--profile ${PROFILE}'
 .PHONY: deployManual
 
-
 ## Destroy
 destroy: variables
 	docker-compose run --rm awscdk sh -c '\
