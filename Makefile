@@ -1,6 +1,6 @@
-CDK_DEFAULT_ACCOUNT=<account-umber>
+CDK_DEFAULT_ACCOUNT=<aws-account-number>
 AWS_REGION=ap-southeast-2
-PROFILE=<aws-profile
+PROFILE=<aws-profile>
 
 STACK_NAME=AwsCdkPermissionsStack # DO NOT CHANGE
 

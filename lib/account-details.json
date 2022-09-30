@@ -1,6 +1,15 @@
 {
-  "GitHubOrg": "<organisation>",
-  "GitHubRepo": "<repository>",
-  "GitHubBranch": "<branch>",
-  "RoleName": "aws-cdk-access-role"
+  "RoleName": "aws-cdk-access-role",
+  "GitHubOrgs": [
+    {
+      "OrgName": "<github-organisation>",
+      "OrgRepos": [
+        {
+          "RepoName": "<github-repository>",
+          "RepoEnvs": ["<github-environment>"],
+          "RepoBranches": ["<github-branch>"]
+        }
+      ]
+    }
+  ]
 }
