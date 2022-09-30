@@ -4,6 +4,28 @@ This repository allows you to use AWS CDK to automate the creation of a role tha
 
 The variables in the `Makefile` need to be updated to create the role in the correct account and with the correct permissions. The role name defaults to `aws-cdk-access-role` which then can be added to the GitHub Actions workflows. This, alongside other variables can be found in the `lib/account-details.json` file. The default tags to apply to the role cam be found in the `lib/default-tags.json` file.
 
+The `lib/account-details.json` is required to be in the following structure:
+
+```json
+{
+  "RoleName": "aws-cdk-access-role",
+  "GitHubOrgs": [
+    // array of organisations
+    {
+      "OrgName": "<github-organisation>",
+      "OrgRepos": [
+        // array of repositories
+        {
+          "RepoName": "<github-repository>",
+          "RepoEnvs": ["<github-environment>"], // array of environments
+          "RepoBranches": ["<github-branch>"] // array of branches
+        }
+      ]
+    }
+  ]
+}
+```
+
 The following commands can be run to deploy/destroy the role:
 
 ```
