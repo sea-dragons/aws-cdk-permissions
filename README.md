@@ -6,7 +6,7 @@ The variables in the `Makefile` need to be updated to create the role in the cor
 
 The `lib/account-details.json` is required to be in the following structure:
 
-```json
+```
 {
   "RoleName": "aws-cdk-access-role",
   "GitHubOrgs": [
