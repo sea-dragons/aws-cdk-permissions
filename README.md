@@ -1,5 +1,9 @@
 # AWS CDK Permissions
 
+![](https://img.shields.io/github/v/release/sea-dragons/aws-cdk-permissions?style=plastic)
+![](https://img.shields.io/github/license/sea-dragons/aws-cdk-permissions?style=plastic)
+![](https://img.shields.io/github/package-json/dependency-version/sea-dragons/aws-cdk-permissions/aws-cdk-lib?style=plastic)
+
 This repository allows you to use AWS CDK to automate the creation of a role that GitHub Actions can assume to automatically deploy further AWS infrastructure. This requires that docker is running and that an AWS profile is setup with the required config/credentials files created.
 
 The role name defaults to `aws-cdk-access-role` which then can be added to the GitHub Actions workflows. This, alongside other variables can be found in the `lib/account-details.json` file. The default tags to apply to the role cam be found in the `lib/default-tags.json` file.
