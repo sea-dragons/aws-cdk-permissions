@@ -11,7 +11,7 @@ synth: variables
 .PHONY: synth
 
 ## Deploy
-deploy: variables
+deploy: variables bootstrap
 	docker-compose run --rm awscdk sh -c '\
 		AWS_ACCOUNT=$(AWS_ACCOUNT) \
 		AWS_REGION=$(AWS_REGION) \
