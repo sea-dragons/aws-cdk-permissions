@@ -1,5 +1,10 @@
 STACK_NAME=AwsCdkPermissionsStack
 
+## Bootstrap
+bootstrap: variables
+	docker-compose run --rm awscdk sh -c 'cdk bootstrap aws://$(AWS_ACCOUNT)/$(AWS_REGION) --profile $(PROFILE)'
+.PHONY: bootstrap
+
 ## Synth
 synth: variables
 	docker-compose run --rm awscdk sh -c 'cdk synth ${STACK_NAME}'

@@ -8,6 +8,11 @@ export class AwsCdkPermissionsStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
+    const provider = new iam.OpenIdConnectProvider(this, 'MyProvider', {
+      url: 'https://token.actions.githubusercontent.com',
+      clientIds: [ 'sts.amazonaws.com' ],
+    });
+
     let trustSubject: string[] = [];
     Object.entries(account.GitHubOrgs).forEach((organisation) => {
       const [_, org] = organisation;
